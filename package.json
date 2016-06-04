@@ -1,0 +1,34 @@
+{
+  "name": "waapi-fun",
+  "version": "0.0.0",
+  "description": "Web Animations API Editor Experiment",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/waapi/fun.git"
+  },
+  "keywords": ["waapi", "web animations", "animations", "editor", "sandbox", "tool"],
+  "license": "MIT",
+  "dependencies": {
+    "classnames": "^2.1.2",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "react-hot-loader": "^3.0.0-beta.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-core": "^6.3.17",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015-loose": "^6.1.3",
+    "babel-preset-react": "6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "node-libs-browser": "^0.5.2",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.9.11",
+    "webpack-dev-server": "^1.9.0"
+  }
+}
