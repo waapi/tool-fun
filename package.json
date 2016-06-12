@@ -10,13 +10,23 @@
     "type": "git",
     "url": "https://github.com/waapi/fun.git"
   },
-  "keywords": ["waapi", "web animations", "animations", "editor", "sandbox", "tool"],
+  "keywords": [
+    "waapi",
+    "web animations",
+    "animations",
+    "editor",
+    "sandbox",
+    "tool"
+  ],
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.1.2",
+    "localforage": "^1.4.2",
     "react": "^15.0.1",
+    "react-codemirror": "^0.2.6",
     "react-dom": "^15.0.1",
-    "react-hot-loader": "^3.0.0-beta.1"
+    "react-hot-loader": "^3.0.0-beta.1",
+    "react-notification-center": "^1.2.1"
   },
   "devDependencies": {
     "babel-cli": "^6.3.17",

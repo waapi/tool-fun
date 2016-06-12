@@ -1,0 +1,11 @@
+div.editor {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+}
+
+div.editor .CodeMirror {
+	flex: 1 1 100%;
+	height: auto;
+}

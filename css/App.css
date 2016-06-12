@@ -1,0 +1,98 @@
+
+.app-root {
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+.editor-layout {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+}
+
+.editor-layout .columns {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	flex: 1 1 100%;
+}
+
+.editor-layout .column {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	flex: 1 0 0;
+}
+
+.editor-layout .column.left {}
+
+.editor-layout .column.left div.preview {
+	flex: 0 0 50%;
+}
+.editor-layout .column.left div.editor {
+	flex: 1 1 auto;
+}
+
+.editor-layout .column.right {}
+
+.editor-layout .column.right div.editor {
+	flex: 1 1 auto;
+}
+
+
+
+
+
+
+header.global {
+	position: relative;
+	height: 50px;
+	border-bottom: 1px solid hsl(0, 0%, 90%);
+	background: hsl(0, 0%, 95%);
+}
+
+.app-root .react-notification-center {
+	width: 50px;
+	height: 50px;
+}
+
+.app-root .react-notification-center .r-notifications-icon {
+	top: 20px;
+	left: 20px;
+	overflow: visible;
+}
+
+.app-root .react-notification-center .r-notifications-icon::after {
+	position: absolute;
+	top: -12px;
+	left: -12px;
+	right: -12px;
+	bottom: -12px;
+	content: '';
+	border-radius: 100%;
+}
+
+.app-root .react-notification-center .r-notifications-icon.active {
+	top: 14px;
+	left: 14px;
+}
+
+.app-root .react-notification-center .rr-wrapper.left {
+	top: 45px;
+	left: 5px;
+}
+
+.app-root .react-notification-center .rr-wrapper::before {
+	left: 5px;
+}
+
+
+
+
+.foo { bar: 'baz' }
