@@ -1,4 +1,5 @@
 import React from 'react';
+import 'css/fonts.css';
 import 'css/Root.css';
 import 'css/App.css';
 import Services from 'systems/Services.js';
@@ -33,13 +34,13 @@ export default class Root extends React.Component {
     
     render() {
         if(this.state.hasServiceWorker === null) return (
-            <div>
+            <div className="app-init">
                 Initialising App
             </div>
         );
         
         else if(this.state.hasServiceWorker === false) return (
-            <div>
+            <div className="app-init">
                 Failed to register Service Worker
             </div>
         );
@@ -47,7 +48,19 @@ export default class Root extends React.Component {
         else if(this.state.hasServiceWorker === true) return (
             <div className="app-root editor-layout">
                 <header className="global">
-                    <NotificationCenter/>
+                    <NotificationCenter
+                        notificationTitle={'Notifications'}
+                        noNotificationText={'🌤'}
+                    />
+                    <button className="primary is-active">
+                        Sources
+                    </button>
+                    <button className="primary">
+                        Animations
+                    </button>
+                    <button className="primary">
+                        Preview
+                    </button>
                 </header>
                 <div className="columns">
                     <div className="column left">

@@ -1,9 +1,9 @@
-// import 'todomvc-app-css/index.css';
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import Root from './containers/Root';
 import FileSystem from 'systems/FileSystem.js';
+import 'polyfills/passive-scroll.js';
 
 window.fs = FileSystem;
 

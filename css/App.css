@@ -28,6 +28,7 @@
 	justify-content: space-between;
 	align-items: stretch;
 	flex: 1 0 0;
+	width: 0;
 }
 
 .editor-layout .column.left {}
@@ -52,19 +53,65 @@
 
 header.global {
 	position: relative;
-	height: 50px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	height: 40px;
 	border-bottom: 1px solid hsl(0, 0%, 90%);
 	background: hsl(0, 0%, 95%);
 }
 
+header.global button.primary {
+	position: relative;
+	display: flex;
+	flex: 0 0 auto;
+	padding: 0 20px;
+	border: none;
+	background: none;
+	font: 18px/1.2 sans-serif;
+	outline: none;
+}
+
+header.global button.primary:not(.is-active):hover {
+	background: hsla(215, 0%, 50%, 0.1);
+	cursor: pointer;
+}
+
+header.global button.primary:not(.is-active):hover::after {
+	left: 0;
+	right: 0;
+	border-bottom-color: hsl(215, 0%, 80%);
+}
+
+header.global button.primary.is-active::after {
+	border-bottom-color: hsl(207, 90%, 54%);
+}
+
+header.global button.primary::after {
+	position: absolute;
+	left: .4em;
+	right: .4em;
+	bottom: 0;
+	content: '';
+	border-bottom: 3px solid transparent;
+}
+
+
+
+
+
 .app-root .react-notification-center {
-	width: 50px;
-	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	flex: 0 0 40px;
 }
 
 .app-root .react-notification-center .r-notifications-icon {
-	top: 20px;
-	left: 20px;
+	position: static;;
 	overflow: visible;
 }
 
@@ -85,14 +132,29 @@ header.global {
 
 .app-root .react-notification-center .rr-wrapper.left {
 	top: 45px;
-	left: 5px;
+	left: 20px;
+	box-shadow: 3px 3px 20px hsla(0, 0%, 0%, 0.2);
 }
 
 .app-root .react-notification-center .rr-wrapper::before {
-	left: 5px;
+	left: 0px;
+	border-left: none;
+}
+
+.app-root .react-notification-center .rr-wrapper.left,
+.app-root .react-notification-center .rr-wrapper.left .notification-holder,
+.app-root .react-notification-center .rr-wrapper.left .rn-header {
+	border-top-left-radius: 0;
 }
 
 
 
 
-.foo { bar: 'baz' }
+.app-init {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	font: 20px/1.3 sans-serif;
+}

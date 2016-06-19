@@ -6,6 +6,7 @@ class Services {
             this.registered = navigator.serviceWorker.register('/sw.js')
 			.catch(error => {
 				console.error('Unable to add Service Worker 😞');
+				throw new Error('Unable to add Service Worker');
 			});
 			
 			this.ready = navigator.serviceWorker.ready.then(::this.bind);

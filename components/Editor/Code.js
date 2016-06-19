@@ -4,6 +4,7 @@ import CodeMirror from 'react-codemirror';
 import 'codemirror/mode/htmlmixed/htmlmixed';
 import 'codemirror/mode/css/css';
 import 'codemirror/mode/javascript/javascript';
+import 'codemirror/keymap/sublime';
 import 'codemirror/lib/codemirror.css';
 import './Code.css';
 
@@ -18,15 +19,15 @@ export default class CodeEditor extends React.Component {
         this.watcher = null;
 	}
 	
-    componentWillMount() {}
-    componentDidMount() {
-        if(this.props.path)
+    componentWillMount() {
+		if(this.props.path)
 		{
 			this.guessMode();
 			this.watcher = FileSystem.watch(this.props.path);
 			FileSystem.read(this.props.path).then(::this.handleRead);
 		}
-    }
+	}
+    componentDidMount() {}
     
     componentWillUnmount() {
         if(this.watcher)
@@ -73,15 +74,28 @@ export default class CodeEditor extends React.Component {
 		);
 		
 		return (
-			<CodeMirror
-				className="editor"
-                value={this.state.content || ''}
-                onChange={::this.handleEdit}
-                options={{
-                    lineNumbers: true,
-                    mode: this.state.mode
-                }}
-            />
+			<div className="editor">
+				<header>
+					<span className="tab">{this.props.path}</span>
+					{this.state.mode && <span className="mode">{{
+						htmlmixed: 'HTML',
+						css: 'CSS',
+						javascript: 'JS'
+					}[this.state.mode]}</span>}
+				</header>
+				<CodeMirror
+	                value={this.state.content || ''}
+	                onChange={::this.handleEdit}
+	                options={{
+						keyMap: 'sublime',
+	                    lineNumbers: false,
+	                    mode: this.state.mode,
+						indentWithTabs: true,
+						indentUnit: 4,
+						fixedGutter: false
+	                }}
+	            />
+			</div>
 		);
 	}
 }

@@ -80,7 +80,19 @@ export default class Preview extends React.Component {
     }
     
     handleUpdate(event) {
-        if(this._iframe) this._iframe.contentWindow.location.reload();
+        if(this._iframe)
+        {
+            // this._iframe.contentWindow.location.reload();
+            
+            fs.read(event.path).then((html) => {
+                if(html.indexOf)
+                html = '<base href="/live/"/>' + html;
+                this._iframe.contentDocument.open();
+                this._iframe.contentDocument.write('');
+                this._iframe.contentDocument.write(html);
+                this._iframe.contentDocument.close();
+            });
+        }
     }
     
     handleUpdateDependency(event) {
@@ -100,6 +112,9 @@ export default class Preview extends React.Component {
         
         return (
             <div className="preview page">
+				{/*<header className="location">
+					<span className="bar">{location.origin + '/live' + this.props.path}</span>
+				</header>*/}
                 <iframe
                     ref={c => this._iframe = c}
                     className="preview"
